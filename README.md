@@ -1,4 +1,4 @@
-# qiskit-quantum-traffic-engineering
+# Qiskit Quantum Traffic Engineering
 
 An intelligent traffic-management layer above IBM Quantum Runtime: queue-
 and noise-aware backend selection, ISA-safe job submission with failover,
