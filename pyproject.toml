@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qiskit-quantum-traffic-engineering"
+version = "0.1.0"
+description = "An intelligent traffic-management layer above IBM Quantum Runtime: queue- and noise-aware backend selection, ISA-safe routing with failover, and SLA/outage-driven rerouting"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+authors = [
+    { name = "Rex Rowan" }
+]
+dependencies = [
+    "qiskit>=2.0,<3",
+    "qiskit-ibm-runtime>=0.30,<1",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0",
+]
+validate = [
+    "qiskit-aer>=0.13",
+]
+dashboard = [
+    "rich>=13.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/RexRowan/Qiskit-Quantum-Traffic-Engineering"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["qiskit_traffic_engineering*"]
