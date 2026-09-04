@@ -4,24 +4,9 @@ An intelligent traffic-management layer above IBM Quantum Runtime: queue-
 and noise-aware backend selection, ISA-safe job submission with failover,
 and SLA/outage-driven rerouting of jobs still waiting in queue.
 
-## Where this fits — and where it doesn't
-
-**Core Qiskit (`Qiskit/qiskit`) is hardware-agnostic by design.** It has no
-concept of IBM backends, queues, or Runtime jobs — that's precisely why
-`qiskit-ibm-runtime` exists as a separate, IBM-maintained package. This
-project is scoped to sit **alongside `qiskit-ibm-runtime`**, as a candidate
-for that ecosystem (or, more likely at first, an independent package that
-demonstrates the idea) — not as a proposed change to core Qiskit. Framing
-it as a "Qiskit SDK" contribution would be scoped wrong from the start.
-
-The realistic path to actual IBM adoption is opening a design discussion
-against `Qiskit/qiskit-ibm-runtime`'s issue tracker once this is solid,
-not submitting a large unsolicited PR. Large new subsystems there get
-discussed before they get merged.
-
 ## Design stance on rerouting
 
-This is the part worth being careful about. An automated tool that cancels
+An automated tool that cancels
 a queued job and resubmits it elsewhere purely to jump to a shorter line
 would look like **gaming IBM's fair-share scheduler** — and a tool built
 that way actively hurts, rather than helps, any case for adoption.
